@@ -44,4 +44,11 @@ const produtos=[
         "Estoque": 5,
         "EstoqueMinimo": 5,
     },
-]
+]    
+produtos.forEach(element, index =>{
+    console.log(element.idProduto[index])
+})
+
+
+console.log(produtos[0].idProduto)
+
