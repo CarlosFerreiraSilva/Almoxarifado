@@ -7,6 +7,11 @@
     <link rel="stylesheet" href="./assets/css/requisicao.css">
     <link rel="stylesheet" href="./assets/css/inputRequisicao.css">
     <link rel="stylesheet" href="./assets/css/tabelas.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+
 </head>
 <body>
     <div class="menu"></div>
@@ -21,6 +26,12 @@
                     <span>Dados Principais | Requisição Nº </span>
                     <input type="number" id="inpNumero">
                 </div>
+                <button class="" type="button" class="btn btn-secondary" 
+                data-bs-toggle="tooltip" data-bs-placement="top"
+                data-bs-custom-class="custom-tooltip"
+                data-bs-title="This top tooltip is themed via CSS variables.">
+            Custom tooltip
+            </button>
                 <div class="camposPrincipais">
                     <div class="camposPrincipaisLinha1 linhasCampos">
                         <div class="grupo1 grupoInput">
@@ -53,15 +64,28 @@
                     <div class="camposPrincipaisLinha3 linhasCampos">
                         <div class="grupo7 grupoInput">
                             <span>Categoria Motivo</span>  
+                
+                              </select>
                             <div class="grupoCategoria">                                                         
-                                <select id="categoriaMotivo"></select>
+                                <select class="form-select" aria-label="Default select example">
+                                    <option selected>Open this select menu</option>
+                                    <option value="1">One</option>
+                                    <option value="2">Two</option>
+                                    <option value="3">Three</option>
+                                  </select>
                                 <img class="btnAdd" src="/assets/img/add.svg" alt="">
                             </div>
                         </div>
                         <div class="grupo8 grupoInput">
                             <span>Motivo</span> 
+   
                             <div class="grupoMotivo"> 
-                                <select id="Motivo"></select>
+                                <select class="form-select" aria-label="Default select example">
+                                    <option selected>Open this select menu</option>
+                                    <option value="1">One</option>
+                                    <option value="2">Two</option>
+                                    <option value="3">Three</option>
+                                  </select>
                                 <img class="btnAdd" src="/assets/img/add.svg" alt="">
                             </div>                            
                    
@@ -109,8 +133,12 @@
                                 <input type="text" id="DescricaoProduto">
                             </div>
                             <div class="grupoEstoque">
+                                <a data-bs-toggle="tooltip" data-bs-placement="top"
+                                data-bs-custom-class="custom-tooltip"
+                                data-bs-title="This top tooltip is themed via CSS variables.">
                                 <span>Estoque</span>
                                 <input type="text" id="Estoque">
+                                </a>
                             </div>
                             <div class="grupoQuantidade">
                                 <span>Quantidade</span>
@@ -163,7 +191,10 @@
    
 <script src="./assets/scripts/main.js"></script>
 <script src="./assets/scripts/dados.js">
-
 </script>
+<script>    const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+    const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+</script>
+
 </body>
 </html>
