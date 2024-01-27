@@ -45,10 +45,36 @@ const produtos=[
         "EstoqueMinimo": 5,
     },
 ]    
-// produtos.forEach(element, index =>{
-//     console.log(element.idProduto[index])
-// })
+
+const departamentos=[
+    {
+ "Codigo": 1,
+ "Descricao":"Financeiro"
+    },
+    {
+        "Codigo": 2,
+        "Descricao":"RH"
+    },
+]    
+
+const funcionario = [
+    {
+        "idFunc": 1,
+        "Responsavel": "José",
+        "idCargo": "Comissionado"
+    },
+    {
+        "idFunc": 2,
+        "Responsavel": "Luiz",
+        "idCargo": "Gestor"
+    },
+    {
+        "idFunc": 3,
+        "Responsavel": "Maria",
+        "idCargo": "Gerente"
+    }
+]
 
 
-console.log(produtos[0].idProduto)
+
 
