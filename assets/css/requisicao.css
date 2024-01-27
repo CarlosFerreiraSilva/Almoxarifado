@@ -164,3 +164,22 @@
     font-size: 18px;
 }
 
+.grupoBotoes{
+    margin-top: 5px;
+    display: flex;
+    justify-content: flex-end;
+    text-align: center;
+
+}
+
+.botoes{
+    width: 120px;
+    height: 40px;
+    background-color: #000000;
+    color: #ffffff;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
