@@ -6619,19 +6619,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\manha.cetafest\\.nuget\\packages\\": {}
+    "C:\\Users\\tarde.cetafest\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\manha.cetafest\\source\\repos\\Leandro_Teste\\Leandro_Teste\\Leandro_Teste.csproj",
+      "projectUniqueName": "C:\\Users\\tarde.cetafest\\Documents\\GitHub\\Almoxarifado\\XUnit\\Leandro_Teste\\Leandro_Teste.csproj",
       "projectName": "Leandro_Teste",
-      "projectPath": "C:\\Users\\manha.cetafest\\source\\repos\\Leandro_Teste\\Leandro_Teste\\Leandro_Teste.csproj",
-      "packagesPath": "C:\\Users\\manha.cetafest\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\manha.cetafest\\source\\repos\\Leandro_Teste\\Leandro_Teste\\obj\\",
+      "projectPath": "C:\\Users\\tarde.cetafest\\Documents\\GitHub\\Almoxarifado\\XUnit\\Leandro_Teste\\Leandro_Teste.csproj",
+      "packagesPath": "C:\\Users\\tarde.cetafest\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\tarde.cetafest\\Documents\\GitHub\\Almoxarifado\\XUnit\\Leandro_Teste\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\manha.cetafest\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\tarde.cetafest\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
