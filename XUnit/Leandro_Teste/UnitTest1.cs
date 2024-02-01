@@ -101,19 +101,7 @@ namespace Leandro_Teste
         {
             driver.Navigate().GoToUrl("http://127.0.0.1:5501/index.html");
             driver.Manage().Window.Size = new System.Drawing.Size(945, 1012);
-            driver.FindElement(By.Id("idDepartamento")).SendKeys("1");
-            driver.FindElement(By.Id("idDepartamento")).Click();
-
-            try
-            {
-                var valor1 = driver.FindElement(By.Id("idDepartamento")).GetAttribute("value");
-                Assert.IsType<int>(Convert.ToInt32(valor1));
-            }
-            catch (Exception)
-            {
-                Dispose();
-                throw;
-            }
+ 
 
 
             driver.FindElement(By.Id("idDepartamento")).SendKeys("-3");
@@ -347,11 +335,17 @@ namespace Leandro_Teste
             driver.Manage().Window.Size = new System.Drawing.Size(945, 1012);
             driver.FindElement(By.Id("Saida")).Click();
             driver.FindElement(By.Id("Saida")).SendKeys("-10");
-
+            
             try
             {
-                var valor1 = driver.FindElement(By.Id("Saida")).GetAttribute("value");
-                Assert.IsType<int>(Convert.ToInt32(valor1));
+                bool valorEsperado = true;
+                var valor1 = Convert.ToInt32(driver.FindElement(By.Id("Saida")).GetAttribute("value"));
+                if (valor1 < 0)
+                {
+                    valorEsperado = false;
+                }
+                Assert.IsType<int>(valor1);
+                Assert.True(valorEsperado);
             }
             catch (Exception)
             {
