@@ -31,7 +31,7 @@ namespace Leandro_Teste
         [Fact]
         public void TesteCT01ValidarTeladeRequisição()
         {
-            driver.Navigate().GoToUrl("http://127.0.0.1:5500/Almoxarifado-main/index.html");
+            driver.Navigate().GoToUrl("http://127.0.0.1:5501/index.html");
             driver.Manage().Window.Size = new System.Drawing.Size(1936, 1048);
             driver.FindElement(By.CssSelector(".button-save")).Click();
 
@@ -76,7 +76,7 @@ namespace Leandro_Teste
         [Fact]
         public void TesteCT02SelecionadoVerde()
         {
-            driver.Navigate().GoToUrl("http://127.0.0.1:5500/Almoxarifado-main/index.html");
+            driver.Navigate().GoToUrl("http://127.0.0.1:5501/index.html");
             driver.Manage().Window.Size = new System.Drawing.Size(945, 1012);
             driver.FindElement(By.Id("idDepartamento")).Click();
             var resultadoEsperado = "green";
@@ -99,7 +99,7 @@ namespace Leandro_Teste
         [Fact]
         public void TesteCT03ValidarCampoID()
         {
-            driver.Navigate().GoToUrl("http://127.0.0.1:5500/Almoxarifado-main/index.html");
+            driver.Navigate().GoToUrl("http://127.0.0.1:5501/index.html");
             driver.Manage().Window.Size = new System.Drawing.Size(945, 1012);
             driver.FindElement(By.Id("idDepartamento")).SendKeys("1");
             driver.FindElement(By.Id("idDepartamento")).Click();
@@ -137,7 +137,7 @@ namespace Leandro_Teste
         [Fact]
         public void TesteCT04CategoriaMotivo()
         {
-            driver.Navigate().GoToUrl("http://127.0.0.1:5500/Almoxarifado-main/index.html");
+            driver.Navigate().GoToUrl("http://127.0.0.1:5501/index.html");
             driver.Manage().Window.Size = new System.Drawing.Size(945, 1012);
 
             var resultadoEsperado1 = "Gestão";
@@ -184,7 +184,7 @@ namespace Leandro_Teste
 
             try
             {
-                driver.Navigate().GoToUrl("http://127.0.0.1:5500/Almoxarifado-main/index.html");
+                driver.Navigate().GoToUrl("http://127.0.0.1:5501/index.html");
                 driver.Manage().Window.Size = new System.Drawing.Size(945, 1012);
                 driver.FindElement(By.Id("categoriaMotivo")).Click();
                 {
@@ -231,7 +231,7 @@ namespace Leandro_Teste
         {
             var resultadoEsperadoDepartamento = "Administração";
 
-            driver.Navigate().GoToUrl("http://127.0.0.1:5500/Almoxarifado-main/index.html");
+            driver.Navigate().GoToUrl("http://127.0.0.1:5501/index.html");
             driver.Manage().Window.Size = new System.Drawing.Size(945, 1012);
             driver.FindElement(By.Id("idDepartamento")).Click();
             driver.FindElement(By.Id("idDepartamento")).SendKeys("1");
@@ -259,7 +259,7 @@ namespace Leandro_Teste
             var resultadoEsperado = "Anderson";
             try
             {
-                driver.Navigate().GoToUrl("http://127.0.0.1:5500/Almoxarifado-main/index.html");
+                driver.Navigate().GoToUrl("http://127.0.0.1:5501/index.html");
                 driver.Manage().Window.Size = new System.Drawing.Size(945, 1012);
                 driver.FindElement(By.Id("idFuncionario")).Click();
                 driver.FindElement(By.Id("idFuncionario")).SendKeys("1");
@@ -285,7 +285,7 @@ namespace Leandro_Teste
             var resultadoEsperadoEstoque = "10";
             try
             {
-                driver.Navigate().GoToUrl("http://127.0.0.1:5500/Almoxarifado-main/index.html");
+                driver.Navigate().GoToUrl("http://127.0.0.1:5501/index.html");
                 driver.Manage().Window.Size = new System.Drawing.Size(945, 1012);
                 driver.FindElement(By.Id("CodigoProduto")).Click();
                 driver.FindElement(By.Id("CodigoProduto")).SendKeys("1");
@@ -312,7 +312,7 @@ namespace Leandro_Teste
             bool valorEsperado = true;
             try
             {
-                driver.Navigate().GoToUrl("http://127.0.0.1:5500/Almoxarifado-main/index.html");
+                driver.Navigate().GoToUrl("http://127.0.0.1:5501/index.html");
                 driver.Manage().Window.Size = new System.Drawing.Size(945, 1012);
                 driver.FindElement(By.Id("Saida")).Click();
                 driver.FindElement(By.Id("Saida")).SendKeys("100");
@@ -338,7 +338,7 @@ namespace Leandro_Teste
         [Fact]
         public void TesteCT10ValidarCampoQuantidade()
         {
-            driver.Navigate().GoToUrl("http://127.0.0.1:5500/Almoxarifado-main/index.html");
+            driver.Navigate().GoToUrl("http://127.0.0.1:5501/index.html");
             driver.Manage().Window.Size = new System.Drawing.Size(945, 1012);
             driver.FindElement(By.Id("Saida")).Click();
             driver.FindElement(By.Id("Saida")).SendKeys("-10");
@@ -361,19 +361,24 @@ namespace Leandro_Teste
         [Fact]
         public void TesteCT11BotãoGravar()
         {
-            bool valoresperado = true;
-            driver.Navigate().GoToUrl("http://127.0.0.1:5500/Almoxarifado-main/index.html");
+            var valorNaoEsperado = "disabled";
+            var resultado = false;
+            driver.Navigate().GoToUrl("http://127.0.0.1:5501/index.html");
             driver.Manage().Window.Size = new System.Drawing.Size(945, 1012);
             try
             {
-                driver.FindElement(By.CssSelector(".button-save")).Click();
+               var valor = driver.FindElement(By.CssSelector(".button-save")).GetProperty("disabled");
+                if (valor.Contains(valorNaoEsperado))
+                {
+                    resultado = true;
+                }
             }
             catch (Exception)
             {
-                valoresperado = false;
+                Dispose();
                 throw;
             }
-            Assert.True(valoresperado);
+            Assert.True(resultado);
 
             Dispose();
         }
@@ -382,16 +387,63 @@ namespace Leandro_Teste
         [Fact]
         public void TesteCT13Estoque()
         {
-            driver.Navigate().GoToUrl("http://127.0.0.1:5500/Almoxarifado-main/index.html");
-            driver.Manage().Window.Size = new System.Drawing.Size(945, 1012);
-            driver.FindElement(By.Id("CodigoProduto")).Click();
-            driver.FindElement(By.Id("CodigoProduto")).SendKeys("1");
-            driver.FindElement(By.CssSelector(".itensRequisicao > div:nth-child(2)")).Click();
-            driver.FindElement(By.Id("Saida")).Click();
-            driver.FindElement(By.Id("Saida")).SendKeys("9");
-            driver.FindElement(By.CssSelector(".BtnInserirItens")).Click();
+            //Jujuba, estoque minimo = 30
+
+            try
+            {
+                driver.Navigate().GoToUrl("http://127.0.0.1:5501/index.html");
+                driver.Manage().Window.Size = new System.Drawing.Size(1936, 1048);
+                driver.FindElement(By.Id("CodigoProduto")).Click();
+                driver.FindElement(By.Id("CodigoProduto")).SendKeys("4");
+                driver.FindElement(By.CssSelector(".grupoProdutoDescricao")).Click();
+                driver.FindElement(By.Id("Saida")).Click();
+                driver.FindElement(By.Id("Saida")).SendKeys("10");
+                driver.FindElement(By.Id("button-add")).Click();
+                driver.FindElement(By.Id("CodigoProduto")).Click();
+                driver.FindElement(By.Id("CodigoProduto")).SendKeys("4");
+                driver.FindElement(By.CssSelector(".linhaAdicionarItens")).Click();
+
+                var valorEsperado1 = "rgb(0, 210, 34);";
+                var verde = driver.FindElement(By.Id("corEstoque")).GetAttribute("style");
+                Assert.Contains(valorEsperado1, verde);
+
+                driver.FindElement(By.CssSelector(".excluir")).Click();
+                driver.FindElement(By.Id("Saida")).Click();
+                driver.FindElement(By.Id("Saida")).SendKeys("23");
+                driver.FindElement(By.Id("button-add")).Click();
+                driver.FindElement(By.Id("CodigoProduto")).Click();
+                driver.FindElement(By.Id("CodigoProduto")).SendKeys("4");
+                driver.FindElement(By.CssSelector(".linhaAdicionarItens")).Click();
+
+                var valorEsperado2 = "yellow;";
+                var amarelo = driver.FindElement(By.Id("corEstoque")).GetAttribute("style");
+                Assert.Contains(valorEsperado2, amarelo);
+
+                driver.FindElement(By.CssSelector(".excluir")).Click();
+                driver.FindElement(By.Id("Saida")).Click();
+                driver.FindElement(By.Id("Saida")).SendKeys("40");
+                driver.FindElement(By.Id("button-add")).Click();
+                driver.FindElement(By.Id("CodigoProduto")).Click();
+                driver.FindElement(By.Id("CodigoProduto")).SendKeys("4");
+                driver.FindElement(By.CssSelector(".linhaAdicionarItens")).Click();
+
+                var valorEsperado3 = "rgb(146, 3, 12);";
+                var vermelho = driver.FindElement(By.Id("corEstoque")).GetAttribute("style");
+                Assert.Contains(valorEsperado3, vermelho);
+
+           
+            }
+            catch (Exception)
+            {
+                Dispose();
+                throw;
+            }
             Dispose();
         }
+
+
+      
+        
 
     }
 }
