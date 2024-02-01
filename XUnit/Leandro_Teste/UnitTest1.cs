@@ -121,8 +121,13 @@ namespace Leandro_Teste
 
             try
             {
-                var valor2 = driver.FindElement(By.Id("idDepartamento")).GetAttribute("value");
-                Assert.IsType<int>(Convert.ToInt32(valor2));
+                var resultadonegativo = true;
+                var valor2 = Convert.ToInt32(driver.FindElement(By.Id("idDepartamento")).GetAttribute("value"));
+                if (valor2 < 0)
+                {
+                    resultadonegativo = false;
+                }
+                Assert.True(resultadonegativo);
             }
             catch (Exception)
             {
