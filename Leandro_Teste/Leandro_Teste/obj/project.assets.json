@@ -6624,11 +6624,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\manha.cetafest\\Documents\\GitHub\\Almoxarifado\\XUnit\\Leandro_Teste\\Leandro_Teste.csproj",
+      "projectUniqueName": "C:\\Users\\manha.cetafest\\Documents\\GitHub\\Almoxarifado\\Leandro_Teste\\Leandro_Teste\\Leandro_Teste.csproj",
       "projectName": "Leandro_Teste",
-      "projectPath": "C:\\Users\\manha.cetafest\\Documents\\GitHub\\Almoxarifado\\XUnit\\Leandro_Teste\\Leandro_Teste.csproj",
+      "projectPath": "C:\\Users\\manha.cetafest\\Documents\\GitHub\\Almoxarifado\\Leandro_Teste\\Leandro_Teste\\Leandro_Teste.csproj",
       "packagesPath": "C:\\Users\\manha.cetafest\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\manha.cetafest\\Documents\\GitHub\\Almoxarifado\\XUnit\\Leandro_Teste\\obj\\",
+      "outputPath": "C:\\Users\\manha.cetafest\\Documents\\GitHub\\Almoxarifado\\Leandro_Teste\\Leandro_Teste\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\manha.cetafest\\AppData\\Roaming\\NuGet\\NuGet.Config",

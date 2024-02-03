@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "agMApfKXqhVcABsBSdq5s8b6QXh08QSoQ+/a2ltGkcBagNJTDQHRhxTinzSaQZyQYDG6Nlp9aP3MydMnWtf04w==",
+  "dgSpecHash": "O4cUCw3N+e/Ohapwlo6QtdKzmv43NGuYrZ7KyUp+ikBvP7S9Q+/v0aa7nD92SeOI0k/63LOQvxocvTHwbvgS3A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\manha.cetafest\\Documents\\GitHub\\Almoxarifado\\XUnit\\Leandro_Teste\\Leandro_Teste.csproj",
+  "projectFilePath": "C:\\Users\\manha.cetafest\\Documents\\GitHub\\Almoxarifado\\Leandro_Teste\\Leandro_Teste\\Leandro_Teste.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\manha.cetafest\\.nuget\\packages\\coverlet.collector\\3.1.2\\coverlet.collector.3.1.2.nupkg.sha512",
     "C:\\Users\\manha.cetafest\\.nuget\\packages\\microsoft.codecoverage\\17.1.0\\microsoft.codecoverage.17.1.0.nupkg.sha512",

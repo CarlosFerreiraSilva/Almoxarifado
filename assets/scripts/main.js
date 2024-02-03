@@ -126,6 +126,86 @@ function carregarNomesFuncionarioAoAlterarIDDepartamento(){
     })
     }
 
+
+    function carregarProdutoPorID(){
+    const  elementIdProd = document.getElementById("CodigoProduto");
+    elementIdProd.addEventListener("keyup",function(){
+        const valorPesquisar = elementIdProd.value
+        const produtoEncontrado =
+        produtos.find((obj)=>obj.idProduto==valorPesquisar);
+
+        if (produtoEncontrado!=undefined) {
+            document.getElementById("DescricaoProduto").value =
+            produtoEncontrado.Descricao
+            document.getElementById("Estoque").value =
+            produtoEncontrado.Estoque
+            let cor = verificarRegraPercentualEstoqueMinimo(produtoEncontrado);
+            const elementoImg = document.getElementById("imgStatus")
+            if (cor=="verde") {
+                console.log(elementoImg)
+                elementoImg.src = "/assets/img/verde.png"
+            }else if(cor =="vermelho"){
+                elementoImg.src = "/assets/img/vermelho.png"
+            }else{
+                elementoImg.src = "/assets/img/amarelo.png"
+            }
+        }else{
+            document.getElementById("DescricaoProduto").value =""
+            document.getElementById("Estoque").value =""
+        }
+    })
+    }
+
+function verificarRegraPercentualEstoqueMinimo(pProduto){
+    let vPerc10 = Math.round(pProduto.EstoqueMinimo*10/100) + pProduto.EstoqueMinimo
+    console.log(vPerc10)
+
+    if (pProduto.Estoque>vPerc10) {
+        return "verde"
+    } else if(pProduto.Estoque<pProduto.EstoqueMinimo){
+        return "vermelho"
+    }else{
+        return "amarelo"
+    }
+}
+
+
+document.getElementById("BtnInserirItens").addEventListener('click',function(){
+    const tabelaItens = document.getElementById("tabelaItens")
+    var total = document.getElementById("total") 
+    let codigoProduto = document.getElementById("CodigoProduto").value
+    let quantidade = document.getElementById("Quantidade").value
+    const produtoEncontrado =
+          produtos.find((obj)=> obj.idProduto==codigoProduto)
+
+    const linha = document.createElement("tr")
+
+    const tdCodigo = document.createElement("td");
+    const tdDescricao = document.createElement("td");
+    const tdQuantidade = document.createElement("td");
+    const tdUnidade = document.createElement("td");
+    const tdPreco = document.createElement("td");
+    const tdTotal = document.createElement("td");
+
+    tdCodigo.innerHTML = codigoProduto;
+    tdDescricao.innerHTML = produtoEncontrado.Descricao;
+    tdQuantidade.innerHTML = quantidade;
+    tdUnidade.innerHTML = produtoEncontrado.Unidade;
+    tdPreco.innerHTML = produtoEncontrado.Preco;
+    tdTotal.innerHTML = produtoEncontrado.Preco*quantidade;
+    total.value += produtoEncontrado.Preco*quantidade;
+
+    linha.appendChild(tdCodigo);
+    linha.appendChild(tdDescricao);
+    linha.appendChild(tdQuantidade);
+    linha.appendChild(tdUnidade);
+    linha.appendChild(tdPreco);
+    linha.appendChild(tdTotal);
+
+    tabelaItens.appendChild(linha);
+})
+
+carregarProdutoPorID()
 carregarNomesFuncionarioAoAlterarIDDepartamento()
 carregarNomesDepartamentoAoAlterarIDDepartamento()
 carregarMotivoAoAlterarCategoria()
